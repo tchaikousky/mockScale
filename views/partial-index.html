@@ -1,0 +1,18 @@
+<label name="weight">Select an Item</label>
+
+<form action="/" method="POST">
+    <ul id="weights">
+        ${inventoryData.map(item => `
+            <li id="${item.currentweight}" value="${item.currentweight}" needed="${item.id}">${item.id} - ${item.currentweight}</li>
+            `).join('')}
+        </ul>
+    <label>id</label><input type="number" name="itemToGrab"/>
+    <button type="submit">Grab item</button>
+</form>
+
+<form action="/replace" method="POST">
+    
+    <label>id</label><input type="number" name="itemToGrab">
+    <label>newWeight</label><input type="number" name="currentWeight"/>
+    <button type="submit">Replace item</button>
+</form>
